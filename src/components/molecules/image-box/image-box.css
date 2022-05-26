@@ -1,0 +1,15 @@
+.image-box {
+  background-color: whitesmoke;
+  margin: 0;
+}
+
+.image-box figcaption {
+  padding: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .image-box {
+    padding-top: min(calc(50vw - 300px), 2rem);
+    padding-bottom: min(calc(50vw - 300px), 2rem);
+  }
+}
