@@ -1,9 +1,8 @@
-import { Attributes } from "../../../interfaces";
-import image from "../../atoms/image";
-import element from "../../quarks/element";
+import { element, image } from "../";
+import { Attributes } from "../../interfaces";
 import "./image-box.css";
 
-export default function imageBox(
+export function imageBox(
   src: string,
   attributes: Attributes | object,
   caption = ""

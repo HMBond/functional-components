@@ -1,7 +1,8 @@
+import { element } from "../";
 import { Attributes } from "../../interfaces";
-import element from "../quarks/element";
+import "./image.css";
 
-export default function image(
+export function image(
   src: string,
   attributes: Attributes | object
 ): HTMLElement {

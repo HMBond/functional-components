@@ -1,6 +1,6 @@
 import { Attributes } from "../../interfaces";
 
-export default function element(
+export function element(
   tag: string,
   attributes: Attributes | object = {}
 ): HTMLElement {

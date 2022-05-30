@@ -1,7 +1,7 @@
+import { element } from "..";
 import { Attributes } from "../../interfaces";
-import element from "../quarks/element";
 
-export default function container(
+export function container(
   children: HTMLElement[] | HTMLElement,
   attributes?: Attributes | object
 ): HTMLDivElement {

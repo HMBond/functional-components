@@ -1,6 +1,6 @@
-import element from "../quarks/element";
+import { element } from "../";
 
-export default function input(
+export function input(
   id: string,
   attributes: {
     placeholder?: string;

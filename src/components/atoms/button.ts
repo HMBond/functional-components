@@ -1,9 +1,12 @@
-import element from "../quarks/element";
+import { element } from "../";
+import { Attributes } from "../../interfaces";
+import "./button.css";
 
-export default function button(
-  children: HTMLElement | HTMLElement[] | Text | string
+export function button(
+  children: HTMLElement | HTMLElement[] | Text | string,
+  attributes?: Attributes | object
 ): HTMLButtonElement {
-  const button = element("button") as HTMLButtonElement;
+  const button = element("button", attributes) as HTMLButtonElement;
   if (Array.isArray(children)) {
     button.append(...children);
   } else {

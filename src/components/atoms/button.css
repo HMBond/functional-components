@@ -1,0 +1,15 @@
+button {
+  color: var(--color-black);
+  border: solid 1px var(--color-black);
+  background-color: var(--color-white);
+  padding: 0.5rem 1rem;
+}
+
+button.active {
+  background-color: var(--color-orange);
+}
+
+button:focus {
+  outline: solid 2px var(--color-orange);
+  outline-offset: -2px;
+}

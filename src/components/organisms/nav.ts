@@ -1,10 +1,14 @@
+import { hide, navBar, show } from "../";
 import { Page } from "../../interfaces";
-import navBar from "../molecules/nav-bar/nav-bar";
-import { hideAll, show } from "../quarks/modifiers";
 
-export default function nav(pages: Page[]): HTMLElement[] {
-  hideAll(pages);
-  show(pages[0]);
+export function nav(pages: Page[]): HTMLElement[] {
+  const activePage = pages[0];
+  setActivePage(activePage);
 
-  return [navBar(pages), ...pages];
+  return [navBar(activePage, pages, setActivePage), ...pages];
+
+  function setActivePage(page: Page) {
+    hide(...pages);
+    show(page);
+  }
 }

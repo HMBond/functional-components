@@ -1,5 +1,5 @@
-import nav from "./components/organisms/nav";
-import about from "./pages/about/about";
+import { nav } from "./components";
+import about from "./pages/about";
 import theUltimateQuestion from "./pages/the-ultimate-question";
 import "./style.css";
 

@@ -1,0 +1,4 @@
+img {
+  width: min(100vw, 600px);
+  vertical-align: top;
+}
