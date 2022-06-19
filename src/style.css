@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  background-color: var(--color-white);
+  background-color: var(--color-black);
 }
 
 #app {
@@ -10,13 +10,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: var(--color-black);
+  color: var(--color-white);
   margin-bottom: 5rem;
 }
 
 input {
   color: var(--color-black);
   border: solid 1px var(--color-black);
+  padding: 0.25rem;
+  border-radius: 0.25rem;
 }
 
 .hidden {
