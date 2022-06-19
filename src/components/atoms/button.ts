@@ -1,10 +1,9 @@
 import { element } from "../";
-import { Attributes } from "../../interfaces";
 import "./button.css";
 
 export function button(
   children: HTMLElement | HTMLElement[] | Text | string,
-  attributes?: Attributes | object
+  attributes?: HTMLButtonElement | object
 ): HTMLButtonElement {
   const button = element("button", attributes) as HTMLButtonElement;
   if (Array.isArray(children)) {

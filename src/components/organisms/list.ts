@@ -1,37 +1,36 @@
-import { Attributes } from "../../interfaces";
 import { element } from "../quarks/element";
 
 type List<T> = {
-  data: T[];
+  items: T[];
   children: HTMLElement[];
   element: HTMLElement;
-  update: (data: T[]) => List<T>;
+  update: (items: T[]) => List<T>;
 };
 
 export function list<T>(
-  data: T[],
+  items: T[],
   renderer: (item: T) => HTMLElement,
-  attributes?: Attributes | object
+  attributes?: HTMLUListElement | object
 ): List<T> {
   const state: List<T> = {
-    data: [],
+    items: [],
     children: [],
     element: element("ul", attributes),
     update,
   };
 
-  update(data);
+  update(items);
 
   return state;
 
-  function update(data: T[]) {
-    for (let [index, item] of data.entries()) {
-      if (!isEqualObjects(state.data[index], item)) {
+  function update(items: T[]) {
+    for (let [index, item] of items.entries()) {
+      if (!isEqualObjects(state.items[index], item)) {
         const itemNode: HTMLElement = renderer(item);
         state.element.children[index]
           ? state.element.children[index].replaceWith(itemNode)
           : state.element.append(itemNode);
-        state.data[index] = item;
+        state.items[index] = item;
       }
     }
     return state;

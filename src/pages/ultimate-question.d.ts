@@ -1,10 +1,11 @@
 export type UltimateQuestionGameParams = {
   isPlaying?: boolean;
   buttonText?: string;
-  displayValue?: string;
+  greeting?: string;
   count?: number;
   onLap?: Callback;
   onStop?: Callback;
+  setRules?: Callback;
 };
 
 export type UltimateQuestionGame = {
@@ -19,6 +20,6 @@ export type UltimateQuestionGame = {
 
 type Start = (reset?: boolean) => UltimateQuestionGame;
 type Stop = () => UltimateQuestionGame;
-type Callback = (count: number) => void;
+type Callback = (game: UltimateQuestionGame) => void;
 
 export type Score = { player: string; count: number };

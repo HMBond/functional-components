@@ -14,13 +14,6 @@ body {
   margin-bottom: 5rem;
 }
 
-input {
-  color: var(--color-black);
-  border: solid 1px var(--color-black);
-  padding: 0.25rem;
-  border-radius: 0.25rem;
-}
-
 .hidden {
   display: none;
 }

@@ -1,8 +1,8 @@
-import { imageBox, post } from "../components";
-import { Page } from "../interfaces";
+import { imageBox, page, post } from "../components";
+import { Page } from "../types";
 import parkInnovationJpg from "./assets/park-innovation.jpg";
 
-export default function about(): Page {
+export function about(): Page {
   const parkImage = imageBox(
     parkInnovationJpg,
     {
@@ -11,13 +11,12 @@ export default function about(): Page {
     "Fig.1: Just like that."
   );
 
-  const page: Page = post("About this project", [
-    "Once upon a time, Herman and I were walking through the park. As usual, we talked about innovation and stuff...",
-    parkImage,
-    "What if you do not use a framework for web development? Just Javascript... ugh... Typescript please. And some Next Generation Frontend Tooling, but no HTML in the mix. Just generate DOM elments with uhhhh... document.createElement or something? What would it look like? How far could we go?",
-  ]);
-
-  page.name = "About";
-
-  return page;
+  return page(
+    "About",
+    post("About this project", [
+      "Once upon a time, Herman and I were walking through the park. As usual, we talked about innovation and stuff...",
+      parkImage,
+      "What if you do not use a framework for web development? Just Javascript... ugh... Typescript please. And some Next Generation Frontend Tooling, but no HTML in the mix. Just generate DOM elments with uhhhh... document.createElement or something? What would it look like? How far could we go?",
+    ])
+  );
 }

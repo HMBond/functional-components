@@ -1,13 +1,13 @@
 import { hide, navBar, show } from "../";
-import { Page } from "../../interfaces";
+import { Page } from "../../types";
 
 export function nav(pages: Page[]): HTMLElement[] {
-  const activePage = pages[0];
-  setActivePage(activePage);
+  const firstPage = pages[0];
+  goto(firstPage);
 
-  return [navBar(activePage, pages, setActivePage), ...pages];
+  return [navBar(firstPage, pages, goto), ...pages];
 
-  function setActivePage(page: Page) {
+  function goto(page: Page) {
     hide(...pages);
     show(page);
   }

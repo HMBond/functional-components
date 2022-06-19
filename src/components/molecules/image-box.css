@@ -1,5 +1,5 @@
 .image-box {
-  background-color: whitesmoke;
+  background-color: var(--color-black);
   margin: 0;
 }
 

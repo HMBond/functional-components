@@ -1,12 +1,14 @@
-import { Attributes } from "../../interfaces";
+interface extendableHTMLElement extends HTMLElement {
+  [key: string]: any;
+}
 
 export function element(
   tag: string,
-  attributes: Attributes | object = {}
+  attributes: HTMLElement | object = {}
 ): HTMLElement {
   const element = document.createElement(tag);
   for (let [key, value] of Object.entries(attributes)) {
-    (element as any)[key] = value;
+    (element as extendableHTMLElement)[key] = value;
   }
 
   return element;

@@ -2,7 +2,8 @@ button {
   color: var(--color-black);
   border: solid 1px var(--color-black);
   background-color: var(--color-white);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
 }
 
 button.active {

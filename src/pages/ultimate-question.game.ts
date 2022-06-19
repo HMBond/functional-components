@@ -2,14 +2,15 @@ import { button, element } from "../components";
 import {
   UltimateQuestionGame,
   UltimateQuestionGameParams,
-} from "./the-ultimate-question.d";
+} from "./ultimate-question.d";
 
 export default function getGame({
   buttonText = "Start",
-  displayValue = "",
+  greeting = "",
   count = 0,
   onLap,
   onStop,
+  setRules,
 }: UltimateQuestionGameParams): UltimateQuestionGame {
   const game: UltimateQuestionGame = {
     isPlaying: false,
@@ -20,9 +21,11 @@ export default function getGame({
       title: "Tip: Use the space bar!",
       onclick: () => start(),
     }),
-    display: element("h1", { innerText: displayValue }),
+    display: element("h1", { innerText: greeting }),
     counter: element("code"),
   };
+
+  setRules && setRules(game);
 
   return game;
 
@@ -56,13 +59,13 @@ export default function getGame({
     game.button.onclick = onFirstClick;
     game.count = game.count + 1;
     game.counter.innerText = `You've played ${game.count} rounds`;
-    onLap && onLap(game.count);
+    onLap && onLap(game);
   }
 
   function stop(): UltimateQuestionGame {
     if (game.isPlaying) {
       game.isPlaying = false;
-      onStop && onStop(game.count);
+      onStop && onStop(game);
     }
     return game;
   }

@@ -1,10 +1,9 @@
 import { element, image } from "../";
-import { Attributes } from "../../interfaces";
 import "./image-box.css";
 
 export function imageBox(
   src: string,
-  attributes: Attributes | object,
+  attributes: HTMLImageElement | object,
   caption = ""
 ): HTMLElement {
   const imageElement = image(src, attributes);
