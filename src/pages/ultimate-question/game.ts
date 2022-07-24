@@ -1,7 +1,7 @@
 import { button, element } from "../../components";
 import { UltimateQuestionGame, UltimateQuestionGameParams } from "./game.d";
 
-export default function getGame({
+export default function ultimateQuestion({
   buttonText = "Start",
   greeting = "",
   count = 0,

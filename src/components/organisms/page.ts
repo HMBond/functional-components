@@ -1,11 +1,14 @@
-import { Page } from "../../types";
 import { container } from "./container";
 
 export function page(
   name: string,
   children: HTMLElement[] | HTMLElement
 ): Page {
-  const page = container(children);
-  (page as Page).name = name;
-  return page as Page;
+  const page = container<Page>(children);
+  page.name = name;
+  return page;
 }
+
+export type Page = HTMLDivElement & {
+  name: string;
+};

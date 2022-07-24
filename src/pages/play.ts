@@ -1,10 +1,10 @@
 import { container, element, input, list, page } from "../components";
-import { Page } from "../types";
-import getGame from "./ultimate-question/game";
+import { Page } from "../components/organisms/page";
+import ultimateQuestion from "./ultimate-question/game";
 import "./ultimate-question/game.css";
 import { Score, UltimateQuestionGame } from "./ultimate-question/game.d";
 
-export function UltimateQuestion(): Page {
+export function play(): Page {
   const greeting = "Hello";
   let player = "";
 
@@ -13,7 +13,7 @@ export function UltimateQuestion(): Page {
     oninput: onNameInput,
     className: "name-input",
   });
-  const game = getGame({
+  const game = ultimateQuestion({
     onLap,
     onStop,
     greeting: `${greeting} ...`,
