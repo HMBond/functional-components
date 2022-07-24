@@ -1,6 +1,6 @@
 import { container } from "../organisms/container";
-import "./dev-error.css";
-import { element } from "./element";
+import { element } from "../quarks/element";
+import "./dev.css";
 
 export function devError(error: any): HTMLElement[] {
   return [

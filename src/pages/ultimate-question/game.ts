@@ -1,8 +1,5 @@
-import { button, element } from "../components";
-import {
-  UltimateQuestionGame,
-  UltimateQuestionGameParams,
-} from "./ultimate-question.d";
+import { button, element } from "../../components";
+import { UltimateQuestionGame, UltimateQuestionGameParams } from "./game.d";
 
 export default function getGame({
   buttonText = "Start",

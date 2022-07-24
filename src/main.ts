@@ -1,7 +1,6 @@
-import { nav } from "./components";
-import { devError } from "./components/quarks/dev-error";
+import { devError, nav } from "./components";
 import { about } from "./pages/about";
-import { UltimateQuestion } from "./pages/ultimate-question";
+import { UltimateQuestion } from "./pages/play";
 import "./style.css";
 
 const app = document.querySelector<HTMLDivElement>("#app")!;

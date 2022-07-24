@@ -1,9 +1,8 @@
-import { container, element, input, page } from "../components";
-import { list } from "../components/organisms/list";
+import { container, element, input, list, page } from "../components";
 import { Page } from "../types";
-import "./ultimate-question.css";
-import { Score, UltimateQuestionGame } from "./ultimate-question.d";
-import getGame from "./ultimate-question.game";
+import getGame from "./ultimate-question/game";
+import "./ultimate-question/game.css";
+import { Score, UltimateQuestionGame } from "./ultimate-question/game.d";
 
 export function UltimateQuestion(): Page {
   const greeting = "Hello";
