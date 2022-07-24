@@ -6,9 +6,9 @@ export function figure(
   attributes: Partial<HTMLImageElement>,
   caption = ""
 ): HTMLElement {
-  const figure = element("figure");
+  const figure = element("figure", attributes);
   figure.append(
-    image(src, attributes),
+    image(src, { alt: attributes.alt ?? caption }),
     element("figcaption", { innerText: caption })
   );
   return figure;

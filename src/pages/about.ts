@@ -5,15 +5,9 @@ export function about() {
   return page(
     "About",
     post("About this project", [
-      "Once upon a time, Herman and I were walking through the park. As usual, we talked about innovation and stuff...",
-      figure(
-        parkInnovationJpg,
-        {
-          alt: "Two men on a bench in a park",
-        },
-        "Fig.1: Just like that."
-      ),
-      "What if you do not use a framework for web development? Just Javascript... ugh... Typescript please. And some Next Generation Frontend Tooling, but no HTML in the mix. Just generate DOM elments with uhhhh... document.createElement or something? What would it look like? How far could we go?",
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      figure(parkInnovationJpg, "Two men on a bench in a park"),
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
     ])
   );
 }
