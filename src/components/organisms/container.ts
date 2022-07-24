@@ -1,10 +1,10 @@
 import { element } from "..";
 
-export function container(
+export function container<T extends HTMLDivElement = HTMLDivElement>(
   children: HTMLElement[] | HTMLElement,
   attributes?: HTMLDivElement | object
-): HTMLDivElement {
-  const container = element("div", attributes) as HTMLDivElement;
+): T {
+  const container = element<T>("div", attributes);
   if (Array.isArray(children)) {
     container.append(...children);
   } else {

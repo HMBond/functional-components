@@ -1,15 +1,12 @@
-interface extendableHTMLElement extends HTMLElement {
-  [key: string]: any;
-}
-
-export function element(
+export function element<T extends HTMLElement = HTMLElement>(
   tag: string,
-  attributes: HTMLElement | object = {}
-): HTMLElement {
+  attributes: Partial<HTMLElement> = {}
+): T {
   const element = document.createElement(tag);
-  for (let [key, value] of Object.entries(attributes)) {
-    (element as extendableHTMLElement)[key] = value;
+  const entries = Object.entries(attributes);
+  for (let [key, value] of entries) {
+    (element as any)[key] = value;
   }
 
-  return element;
+  return element as T;
 }
