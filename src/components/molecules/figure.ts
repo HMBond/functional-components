@@ -3,13 +3,13 @@ import "./figure.css";
 
 export function figure(
   src: string,
-  attributes: HTMLImageElement | object,
+  attributes: Partial<HTMLImageElement>,
   caption = ""
 ): HTMLElement {
-  const imageElement = image(src, attributes);
-  const captionElement = element("figcaption", { innerText: caption });
   const figure = element("figure");
-  figure.append(imageElement, captionElement);
-  figure.classList.add("figure");
+  figure.append(
+    image(src, attributes),
+    element("figcaption", { innerText: caption })
+  );
   return figure;
 }

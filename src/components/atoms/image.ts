@@ -3,7 +3,7 @@ import "./image.css";
 
 export function image(
   src: string,
-  attributes: HTMLImageElement | object
+  attributes: Partial<HTMLImageElement> = {}
 ): HTMLElement {
   const image = element("img", attributes) as HTMLImageElement;
   image.src = src;

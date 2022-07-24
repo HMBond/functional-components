@@ -3,7 +3,7 @@ import "./button.css";
 
 export function button(
   children: HTMLElement | HTMLElement[] | Text | string,
-  attributes?: HTMLButtonElement | object
+  attributes: Partial<HTMLButtonElement> = {}
 ): HTMLButtonElement {
   const button = element("button", attributes) as HTMLButtonElement;
   if (Array.isArray(children)) {

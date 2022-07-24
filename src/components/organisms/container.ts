@@ -2,7 +2,7 @@ import { element } from "..";
 
 export function container<T extends HTMLDivElement = HTMLDivElement>(
   children: HTMLElement[] | HTMLElement,
-  attributes?: HTMLDivElement | object
+  attributes: Partial<HTMLDivElement> = {}
 ): T {
   const container = element<T>("div", attributes);
   if (Array.isArray(children)) {
