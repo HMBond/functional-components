@@ -30,7 +30,7 @@ export function play(): Page {
     className: "high-scores",
   });
 
-  return page("The Ultimate Question", [
+  return page("Play", [
     game.display,
     nameInput,
     container([game.button]),

@@ -1,14 +1,14 @@
-.figure {
+figure {
   background-color: var(--color-black);
   margin: 0;
 }
 
-.figure figcaption {
+figure figcaption {
   padding: 1rem;
 }
 
 @media screen and (min-width: 600px) {
-  .figure {
+  figure {
     padding-top: min(calc(50vw - 300px), 2rem);
     padding-bottom: min(calc(50vw - 300px), 2rem);
   }

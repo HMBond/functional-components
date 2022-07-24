@@ -10,7 +10,7 @@ type List<T> = {
 export function list<T>(
   items: T[],
   renderer: (item: T) => HTMLElement,
-  attributes?: HTMLUListElement | object
+  attributes: Partial<HTMLUListElement> = {}
 ): List<T> {
   const state: List<T> = {
     items: [],

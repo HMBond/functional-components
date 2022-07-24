@@ -1,4 +1,5 @@
 @import url(color-palette.css);
+@import url(modifiers.css);
 
 body {
   margin: 0;
@@ -12,8 +13,4 @@ body {
   text-align: center;
   color: var(--color-white);
   margin-bottom: 5rem;
-}
-
-.hidden {
-  display: none;
 }
