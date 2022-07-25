@@ -86,8 +86,8 @@ export function play(): Page {
     scoreList.update(sort(highscores));
   }
 
-  function scoreItem({ player, count }: Score): HTMLElement {
-    const scoreItem = element("li", { className: "high-score" });
+  function scoreItem({ player, count }: Score): HTMLLIElement {
+    const scoreItem = element<HTMLLIElement>("li", { className: "high-score" });
     scoreItem.append(
       element("span", { innerText: player }),
       element("span", {

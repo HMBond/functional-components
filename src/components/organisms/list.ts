@@ -9,7 +9,7 @@ type List<T> = {
 
 export function list<T>(
   items: T[],
-  renderer: (item: T) => HTMLElement,
+  renderer: (item: T) => HTMLLIElement,
   attributes: Partial<HTMLUListElement> = {}
 ): List<T> {
   const state: List<T> = {
@@ -19,17 +19,15 @@ export function list<T>(
     update,
   };
 
-  update(items);
-
-  return state;
+  return update(items);
 
   function update(items: T[]) {
     for (let [index, item] of items.entries()) {
       if (!isEqualObjects(state.items[index], item)) {
-        const itemNode: HTMLElement = renderer(item);
+        const itemElement = renderer(item);
         state.element.children[index]
-          ? state.element.children[index].replaceWith(itemNode)
-          : state.element.append(itemNode);
+          ? state.element.children[index].replaceWith(itemElement)
+          : state.element.append(itemElement);
         state.items[index] = item;
       }
     }
