@@ -1,10 +1,11 @@
 import { element } from "..";
 
 export function container<T extends HTMLDivElement = HTMLDivElement>(
+  tag: string,
   children: HTMLElement[] | HTMLElement,
-  attributes: Partial<HTMLDivElement> = {}
+  attributes: Partial<T> = {}
 ): T {
-  const container = element<T>("div", attributes);
+  const container = element<T>(tag, attributes);
   if (Array.isArray(children)) {
     container.append(...children);
   } else {

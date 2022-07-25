@@ -5,6 +5,7 @@ import "./dev.css";
 export function devError(error: any): HTMLElement[] {
   return [
     container(
+      "div",
       [
         element("h2", {
           innerText: error.message,

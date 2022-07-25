@@ -33,7 +33,7 @@ export function play(): Page {
   return page("Play", [
     game.display,
     nameInput,
-    container([game.button]),
+    container("div", [game.button]),
     game.counter,
     scoreList.element,
   ]);

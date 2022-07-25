@@ -20,7 +20,7 @@ export function navBar(
     return navButton;
   });
 
-  return container(buttons, { className: "nav-bar" });
+  return container("nav", buttons, { className: "nav-bar" });
 
   function setActiveButton(button: HTMLElement, buttons: HTMLElement[]) {
     deactivate(...buttons);
