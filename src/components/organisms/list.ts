@@ -1,4 +1,4 @@
-import { element } from "../quarks/element";
+import { element } from '../quarks/element';
 
 type List<T> = {
   items: T[];
@@ -15,7 +15,7 @@ export function list<T>(
   const state: List<T> = {
     items: [],
     children: [],
-    element: element("ul", attributes),
+    element: element('ul', attributes),
     update,
   };
 

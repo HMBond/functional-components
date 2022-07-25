@@ -1,6 +1,6 @@
-import { activate, button, container, deactivate } from "../";
-import { Page } from "../organisms/page";
-import "./nav-bar.css";
+import { activate, button, container, deactivate } from '../';
+import { Page } from '../organisms/page';
+import './nav-bar.css';
 
 export function navBar(
   activePage: Page,
@@ -20,7 +20,7 @@ export function navBar(
     return navButton;
   });
 
-  return container("nav", buttons, { className: "nav-bar" });
+  return container('nav', buttons, { className: 'nav-bar' });
 
   function setActiveButton(button: HTMLElement, buttons: HTMLElement[]) {
     deactivate(...buttons);

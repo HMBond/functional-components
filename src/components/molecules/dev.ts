@@ -1,21 +1,21 @@
-import { container } from "../organisms/container";
-import { element } from "../quarks/element";
-import "./dev.css";
+import { container } from '../organisms/container';
+import { element } from '../quarks/element';
+import './dev.css';
 
 export function devError(error: any): HTMLElement[] {
   return [
     container(
-      "div",
+      'div',
       [
-        element("h2", {
+        element('h2', {
           innerText: error.message,
         }),
-        element("code", {
+        element('code', {
           innerText: error.stack,
         }),
       ],
       {
-        className: "dev-error",
+        className: 'dev-error',
       }
     ),
   ];

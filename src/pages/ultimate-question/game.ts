@@ -1,9 +1,9 @@
-import { button, element } from "../../components";
-import { UltimateQuestionGame, UltimateQuestionGameParams } from "./game.d";
+import { button, element } from '../../components';
+import { UltimateQuestionGame, UltimateQuestionGameParams } from './game.d';
 
 export default function ultimateQuestion({
-  buttonText = "Start",
-  greeting = "",
+  buttonText = 'Start',
+  greeting = '',
   count = 0,
   onLap,
   onStop,
@@ -15,11 +15,11 @@ export default function ultimateQuestion({
     stop,
     count,
     button: button(buttonText, {
-      title: "Tip: Use the space bar!",
+      title: 'Tip: Use the space bar!',
       onclick: () => start(),
     }),
-    display: element("h1", { innerText: greeting }),
-    counter: element("code"),
+    display: element('h1', { innerText: greeting }),
+    counter: element('code'),
   };
 
   setRules && setRules(game);
@@ -33,26 +33,26 @@ export default function ultimateQuestion({
       game.count = 0;
     }
     game.button.onclick = onFirstClick;
-    game.button.innerText = "Ask question";
+    game.button.innerText = 'Ask question';
     return game;
   }
 
   function onFirstClick() {
-    game.display.innerText = "How are you today?";
-    game.button.innerText = "Ask another question";
+    game.display.innerText = 'How are you today?';
+    game.button.innerText = 'Ask another question';
     game.button.onclick = onSecondClick;
   }
 
   function onSecondClick() {
     game.display.innerText =
-      "What is the answer to life, the universe, and everything?";
-    game.button.innerText = "Tell me";
+      'What is the answer to life, the universe, and everything?';
+    game.button.innerText = 'Tell me';
     game.button.onclick = onThirdClick;
   }
 
   function onThirdClick() {
-    game.display.innerText = "42";
-    game.button.innerText = "Repeat";
+    game.display.innerText = '42';
+    game.button.innerText = 'Repeat';
     game.button.onclick = onFirstClick;
     game.count = game.count + 1;
     game.counter.innerText = `You've played ${game.count} rounds`;

@@ -1,4 +1,4 @@
-import { element } from "..";
+import { element } from '..';
 
 export function container<T extends HTMLDivElement = HTMLDivElement>(
   tag: string,
