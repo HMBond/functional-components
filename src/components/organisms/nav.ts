@@ -1,5 +1,4 @@
-import { Page } from '..';
-import { hide, navBar, show } from '../';
+import { hide, navBar, Page, show } from '..';
 
 export function nav(pages: Page[]): HTMLElement[] {
   const activePage = pages[0];

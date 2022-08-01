@@ -1,4 +1,4 @@
-import { element } from '../';
+import { element } from '..';
 import './input.css';
 
 export function input(

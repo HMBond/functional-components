@@ -1,4 +1,4 @@
-import { element } from '../';
+import { element } from '..';
 import './image.css';
 
 export function image(

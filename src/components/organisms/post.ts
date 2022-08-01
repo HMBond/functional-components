@@ -1,4 +1,4 @@
-import { container, element } from '../';
+import { container, element } from '..';
 
 export function post(title: string, children: (string | HTMLElement)[]) {
   return container('article', [

@@ -1,5 +1,4 @@
-import { container } from '../organisms/container';
-import { element } from '../quarks/element';
+import { container, element } from '..';
 import './dev.css';
 
 export function devError(error: any): HTMLElement[] {

@@ -1,5 +1,4 @@
-import { activate, button, container, deactivate } from '../';
-import { Page } from '../organisms/page';
+import { activate, button, container, deactivate, Page } from '..';
 import './nav-bar.css';
 
 export function navBar(

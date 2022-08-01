@@ -1,4 +1,4 @@
-import { container } from './container';
+import { container } from '..';
 
 export function page(
   name: string,
