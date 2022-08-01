@@ -4,7 +4,7 @@ import { UltimateQuestionGame, UltimateQuestionGameParams } from './game.d';
 export default function ultimateQuestion({
   buttonText = 'Start',
   greeting = '',
-  count = 0,
+  laps = 0,
   onLap,
   onStop,
   setRules,
@@ -13,7 +13,7 @@ export default function ultimateQuestion({
     isPlaying: false,
     start,
     stop,
-    count,
+    laps: laps,
     button: button(buttonText, {
       title: 'Tip: Use the space bar!',
       onclick: () => start(),
@@ -30,7 +30,7 @@ export default function ultimateQuestion({
     stop();
     game.isPlaying = true;
     if (reset) {
-      game.count = 0;
+      game.laps = 0;
     }
     game.button.onclick = onFirstClick;
     game.button.innerText = 'Ask question';
@@ -54,8 +54,8 @@ export default function ultimateQuestion({
     game.display.innerText = '42';
     game.button.innerText = 'Repeat';
     game.button.onclick = onFirstClick;
-    game.count = game.count + 1;
-    game.counter.innerText = `You've played ${game.count} rounds`;
+    game.laps = game.laps + 1;
+    game.counter.innerText = `You've played ${game.laps} rounds`;
     onLap && onLap(game);
   }
 

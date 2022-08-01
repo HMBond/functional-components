@@ -16,6 +16,5 @@ try {
 }
 
 function renderApp() {
-  const pages = [about(), play()];
-  app.append(...nav(pages));
+  app.append(...nav([about(), play()]));
 }

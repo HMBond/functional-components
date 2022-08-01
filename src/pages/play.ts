@@ -5,6 +5,7 @@ import './ultimate-question/game.css';
 import { Score, UltimateQuestionGame } from './ultimate-question/game.d';
 
 export function play(): Page {
+  const highscores: Score[] = [];
   const greeting = 'Hello';
   let player = '';
 
@@ -13,6 +14,7 @@ export function play(): Page {
     oninput: onNameInput,
     className: 'name-input',
   });
+
   const game = ultimateQuestion({
     onLap,
     onStop,
@@ -25,7 +27,6 @@ export function play(): Page {
     },
   });
 
-  const highscores: Score[] = [];
   const scoreList = list(sort(highscores), (item) => scoreItem(item), {
     className: 'high-scores',
   });
@@ -38,19 +39,19 @@ export function play(): Page {
     scoreList.element,
   ]);
 
-  function onNameInput(e: Event) {
+  function onNameInput() {
     game.stop();
-    player = (e.target as HTMLInputElement).value;
+    player = nameInput.value;
     game.display.innerText = `${greeting} ${player}`;
   }
 
   function onStop(game: UltimateQuestionGame) {
-    const { count } = game;
+    const { laps } = game;
     const score: Score = {
       player: player === '' ? 'Anonymous' : player,
-      count,
+      laps: laps,
     };
-    if (count > 0) saveHighscore(score);
+    if (laps > 0) saveHighscore(score);
     game.button.innerText = 'Play again';
     game.display.innerText = finishMessage(score);
     game.button.onclick = () => {
@@ -61,22 +62,22 @@ export function play(): Page {
   }
 
   function onLap(game: UltimateQuestionGame) {
-    console.info('lap', game.count);
+    console.info('lap', game.laps);
   }
 
   function finishMessage(score: Score): string {
-    const unit = score.count === 1 ? 'lab' : 'labs';
-    const message = `${score.player} scored: ${score.count} ${unit}`;
+    const unit = score.laps === 1 ? 'lab' : 'labs';
+    const message = `${score.player} scored: ${score.laps} ${unit}`;
     const isHighscore =
-      highscores.every((highScore) => highScore.count <= score.count) &&
-      score.count !== 0;
+      highscores.every((highScore) => highScore.laps <= score.laps) &&
+      score.laps !== 0;
     return isHighscore ? 'Highscore!' : message;
   }
 
   function sort(highscores: Score[]): Score[] {
     return [
       ...highscores.sort((a: Score, b: Score) => {
-        return a.count > b.count ? -1 : a.count < b.count ? 1 : 0;
+        return a.laps > b.laps ? -1 : a.laps < b.laps ? 1 : 0;
       }),
     ];
   }
@@ -86,12 +87,12 @@ export function play(): Page {
     scoreList.update(sort(highscores));
   }
 
-  function scoreItem({ player, count }: Score): HTMLLIElement {
+  function scoreItem({ player, laps }: Score): HTMLLIElement {
     const scoreItem = element<HTMLLIElement>('li', { className: 'high-score' });
     scoreItem.append(
       element('span', { innerText: player }),
       element('span', {
-        innerText: `${count} rounds`,
+        innerText: `${laps} rounds`,
       })
     );
     return scoreItem;
