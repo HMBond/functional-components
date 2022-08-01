@@ -1,6 +1,5 @@
 import { devError, nav } from './components';
 import { about } from './pages/about';
-import { play } from './pages/play';
 import './theme/style.css';
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
@@ -16,5 +15,5 @@ try {
 }
 
 function renderApp() {
-  app.append(...nav([about(), play()]));
+  app.append(...nav([about()]));
 }
