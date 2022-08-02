@@ -3,5 +3,9 @@ input {
   background-color: var(--color-white);
   border: solid 1px var(--color-black);
   padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
+}
+
+input:focus-visible {
+  outline-color: var(--color-orange);
 }

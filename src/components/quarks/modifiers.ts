@@ -16,6 +16,11 @@ export function activate(...elements: HTMLElement[]) {
   }
 }
 
+export function activateOne(element: HTMLElement, elements: HTMLElement[]) {
+  deactivate(...elements);
+  activate(element);
+}
+
 export function deactivate(...elements: HTMLElement[]) {
   for (let element of elements) {
     element.classList.remove('active');

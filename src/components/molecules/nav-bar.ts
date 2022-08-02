@@ -1,28 +1,47 @@
-import { activate, button, container, deactivate, Page } from '..';
-import './nav-bar.css';
+import { activate, activateOne, button, container, Page } from '..';
 
 export function navBar(
   activePage: Page,
   pages: Page[],
   goto: (page: Page) => void
 ): HTMLElement {
-  const buttons = pages.map((page) => {
-    const navButton = button(page.name, {
+  return container('nav', navItems(pages, activePage, goto), {
+    className: 'nav-bar',
+  });
+
+  function navItems(
+    pages: Page[],
+    activePage: Page,
+    goto: (page: Page) => void
+  ) {
+    const items: HTMLButtonElement[] = [];
+
+    items.push(
+      ...pages.map((page) => {
+        return navItem(page, activePage, items, goto);
+      })
+    );
+
+    return items;
+  }
+
+  function navItem(
+    page: Page,
+    activePage: Page,
+    items: HTMLButtonElement[],
+    goto: (page: Page) => void
+  ) {
+    const item = button(page.name, {
       onclick: () => {
-        setActiveButton(navButton, buttons);
+        activateOne(item, items);
         goto(page);
       },
     });
+
     if (page === activePage) {
-      activate(navButton);
+      activate(item);
     }
-    return navButton;
-  });
 
-  return container('nav', buttons, { className: 'nav-bar' });
-
-  function setActiveButton(button: HTMLElement, buttons: HTMLElement[]) {
-    deactivate(...buttons);
-    activate(button);
+    return item;
   }
 }

@@ -1,5 +1,4 @@
 import { element } from '..';
-import './image.css';
 
 export function image(
   src: string,

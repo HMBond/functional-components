@@ -1,5 +1,4 @@
 import { element } from '..';
-import './button.css';
 
 export function button(
   children: HTMLElement | HTMLElement[] | Text | string,

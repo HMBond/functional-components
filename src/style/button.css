@@ -1,9 +1,10 @@
 button {
   color: var(--color-black);
+  font-weight: bolder;
   border: solid 1px var(--color-black);
   background-color: var(--color-white);
   padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
 }
 
 button.active {

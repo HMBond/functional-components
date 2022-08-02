@@ -1,4 +1,4 @@
-import { element } from '../quarks/element';
+import { element } from '..';
 
 type List<T> = {
   items: T[];
@@ -9,7 +9,7 @@ type List<T> = {
 
 export function list<T>(
   items: T[],
-  renderer: (item: T) => HTMLLIElement,
+  render: (item: T) => HTMLLIElement,
   attributes: Partial<HTMLUListElement> = {}
 ): List<T> {
   const state: List<T> = {
@@ -24,7 +24,7 @@ export function list<T>(
   function update(items: T[]) {
     for (let [index, item] of items.entries()) {
       if (!isEqualObjects(state.items[index], item)) {
-        const itemElement = renderer(item);
+        const itemElement = render(item);
         state.element.children[index]
           ? state.element.children[index].replaceWith(itemElement)
           : state.element.append(itemElement);

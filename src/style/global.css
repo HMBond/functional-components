@@ -1,6 +1,3 @@
-@import url(color-palette.css);
-@import url(modifiers.css);
-
 body {
   margin: 0;
   background-color: var(--color-black);
@@ -13,4 +10,19 @@ body {
   text-align: center;
   color: var(--color-white);
   margin-bottom: 5rem;
+}
+
+p {
+  margin: 1rem;
+}
+
+form {
+  display: inline-grid;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+label {
+  display: inline-flex;
+  gap: 1rem;
 }
