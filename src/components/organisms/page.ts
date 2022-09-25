@@ -1,14 +1,14 @@
 import { container } from '..';
 
-export function page(
-  name: string,
-  children: HTMLElement[] | HTMLElement
-): Page {
-  const page = container<Page>('page', children);
-  page.name = name;
-  return page;
-}
-
-export type Page = HTMLDivElement & {
+export type PageProps = {
   name: string;
+  path: string;
 };
+
+export type Page = {
+  element: HTMLElement;
+} & PageProps;
+
+export function page(props: PageProps, ...children: HTMLElement[]): Page {
+  return { element: container<HTMLElement>('main', children), ...props };
+}

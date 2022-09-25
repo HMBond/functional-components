@@ -1,6 +1,9 @@
-import { dev, nav } from './components';
+import { dev } from './components';
 import { about } from './pages/about';
 import { contact } from './pages/contact';
+import { pageNotFound } from './pages/pageNotFound';
+import { vanilla } from './pages/vanilla';
+import { router } from './router';
 import './style/index.css';
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
@@ -21,5 +24,6 @@ function withErrorHandling(app: HTMLDivElement) {
 }
 
 function renderApp() {
-  app.append(...nav([about(), contact()]));
+  const pages = [about(), contact(), vanilla()];
+  router(app, { pages, pageNotFound });
 }

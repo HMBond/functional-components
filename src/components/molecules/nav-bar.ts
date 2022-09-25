@@ -15,13 +15,7 @@ export function navBar(
     goto: (page: Page) => void
   ) {
     const items: HTMLButtonElement[] = [];
-
-    items.push(
-      ...pages.map((page) => {
-        return navItem(page, activePage, items, goto);
-      })
-    );
-
+    items.push(...pages.map((page) => navItem(page, activePage, items, goto)));
     return items;
   }
 

@@ -1,6 +1,6 @@
 import { element } from '..';
 
-export function container<T extends HTMLDivElement = HTMLDivElement>(
+export function container<T extends HTMLElement = HTMLElement>(
   tag: string,
   children: (HTMLElement | string)[] | HTMLElement,
   attributes: Partial<T> = {}
