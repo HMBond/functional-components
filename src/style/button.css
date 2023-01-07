@@ -13,5 +13,4 @@ button.active {
 
 button:focus {
   outline: solid 2px var(--color-orange);
-  outline-offset: -2px;
 }
