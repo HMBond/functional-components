@@ -1,9 +1,9 @@
 import { dev } from './components';
 import { about } from './pages/about';
 import { contact } from './pages/contact';
-import { pageNotFound } from './pages/pageNotFound';
+import { notFound } from './pages/not-found';
 import { vanilla } from './pages/vanilla';
-import { router } from './router';
+import { withRouter } from './router';
 import './style/index.css';
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
@@ -24,6 +24,6 @@ function withErrorHandling(app: HTMLDivElement) {
 }
 
 function renderApp() {
-  const pages = [about(), contact(), vanilla()];
-  router(app, { pages, pageNotFound });
+  const pages = [vanilla(), about(), contact()];
+  withRouter(app, { pages, notFound });
 }

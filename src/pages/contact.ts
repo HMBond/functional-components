@@ -1,4 +1,4 @@
-import { container, input, page, Page } from '../components';
+import { container, element, input, page, Page } from '../components';
 
 export type Contact = {
   name: string;
@@ -10,6 +10,7 @@ export type Contact = {
 export function contact(): Page {
   return page(
     { name: 'Contact', path: '/contact' },
+    element('h1', { innerText: 'Contact' }),
     container(
       'form',
       [
