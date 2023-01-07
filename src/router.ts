@@ -21,13 +21,9 @@ export function router(app: HTMLElement, { pages, pageNotFound }: RouterProps) {
 
   function getPageFromPath(pages: Page[]) {
     const path = window.location.pathname;
-    let activePage = pages.find(
-      (page) => page.path.toLowerCase() === path.toLowerCase()
+    return (
+      pages.find((page) => page.path.toLowerCase() === path.toLowerCase()) ??
+      pageNotFound(path)
     );
-    if (!activePage) {
-      activePage = pageNotFound(path);
-    }
-    console.log(activePage.name);
-    return activePage;
   }
 }
